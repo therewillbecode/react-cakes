@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component }from 'react'
 
 import Recipe from './Recipe'
 
@@ -14,16 +14,13 @@ class RecipesList extends Component {
       <div>
         Recipes List
         {items.map(recipe => {
-            <Recipe {...props} />
+            <Recipe recipe={recipe} />
         })}
       </div>
     )
   }
 }
 
-const RecipesList = props => {
-   
-}
 
 
 export default RecipesList

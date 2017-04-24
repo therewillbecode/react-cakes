@@ -5,28 +5,27 @@ import { fetchRecipes } from '../actions/index'
 import RecipesList from '../components/RecipesList'
 
 const RecipeListContainer = props => {
-   const { isFetching, items } = props
+  const { isFetching, items } = props
 
-   if (isFetching) {
-     return (<div>Fetching Recipes</div>)
-   } else {
-     return <RecipesList {...props} />
-   }
+  if (isFetching) {
+    return (<div>Fetching Recipes</div>)
+  } else {
+    return <RecipesList {...props} />
+  }
 }
 
 const mapStateToProps = state => {
   const { isFetching, items } = state
   return {
     items,
-    isFetching,
+    isFetching
   }
 }
 
 const mapDispatchToProps = dispatch => {
-    return({
-        fetchRecipes: () => { dispatch(fetchRecipes()) }
-    })
+  return ({
+    fetchRecipes: () => { dispatch(fetchRecipes()) }
+  })
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeListContainer)

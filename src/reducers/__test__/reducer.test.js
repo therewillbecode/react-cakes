@@ -9,10 +9,10 @@ describe('recipes reducer', () => {
     expect(
       reducer(undefined, {})
     ).toEqual({
-       isFetching: false,
-       err: null,
-       items: []
-     })
+      isFetching: false,
+      err: null,
+      items: []
+    })
   })
 
   it('should handle REQUEST_RECIPES', () => {
@@ -22,24 +22,24 @@ describe('recipes reducer', () => {
         err: null
       })
     ).toEqual({
-       isFetching: true,
-       err: null,
-       items: []
-     }
+      isFetching: true,
+      err: null,
+      items: []
+    }
     )
   })
 
-   it('should handle RECEIVE_RECIPES', () => {
+  it('should handle RECEIVE_RECIPES', () => {
     expect(
       reducer([], {
         type: actions.RECEIVE_RECIPES,
         recipes: [ recipeItem ]
       })
     ).toEqual({
-       isFetching: false,
-       err: null,
-       items: [ recipeItem ]
-     }
+      isFetching: false,
+      err: null,
+      items: [ recipeItem ]
+    }
     )
   })
 
@@ -50,10 +50,10 @@ describe('recipes reducer', () => {
         err: 404
       })
     ).toEqual({
-       isFetching: false,
-       err: 404,
-       items: []
-     }
+      isFetching: false,
+      err: 404,
+      items: []
+    }
     )
   })
 })

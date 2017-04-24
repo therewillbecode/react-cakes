@@ -25,7 +25,7 @@ const recipes = (state = initialState, action) => {
         ...state,
         isFetching: false,
         err: null,
-        items: action.recipes,
+        items: action.recipes
       }
     case REQUEST_RECIPES_ERR:
       return {

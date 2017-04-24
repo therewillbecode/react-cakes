@@ -2,7 +2,6 @@ export const REQUEST_RECIPES = 'REQUEST_RECIPES'
 export const RECEIVE_RECIPES = 'RECEIVE_RECIPES'
 export const REQUEST_RECIPES_ERR = 'REQUEST_RECIPES_ERR'
 
-
 export const requestRecipes = () => ({
   type: REQUEST_RECIPES
 })
@@ -16,7 +15,6 @@ export const requestRecipesErr = (err) => ({
   type: REQUEST_RECIPES_ERR,
   err
 })
-
 
 export const fetchRecipes = () => dispatch => {
   dispatch(requestRecipes())

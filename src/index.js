@@ -7,10 +7,8 @@ import { createLogger } from 'redux-logger'
 import reducer from './reducers/reducer'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-
 import App from './components/App'
 import './index.css'
-
 
 const middleware = [ thunk ]
 if (process.env.NODE_ENV !== 'production') {

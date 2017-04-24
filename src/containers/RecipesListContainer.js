@@ -4,19 +4,19 @@ import { connect } from 'react-redux'
 import RecipesList from '../components/RecipesList'
 
 const RecipeListContainer = props => {
-   const { isFetching, recipes } = props
+   const { isFetching, items } = props
 
    if (isFetching) {
      return (<div>Fetching Recipes</div>)
    } else {
-     return <RecipesList recipes={recipes} />
+     return <RecipesList items={items} />
    }
 }
 
 const mapStateToProps = state => {
-  const { isFetching } = state
+  const { isFetching, items } = state
   return {
-    recipes,
+    items,
     isFetching,
   }
 }

@@ -5,6 +5,8 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import reducer from './reducers/reducer'
+import { composeWithDevTools } from 'redux-devtools-extension'
+
 
 import App from './components/App'
 import './index.css'
@@ -17,10 +19,13 @@ if (process.env.NODE_ENV !== 'production') {
 
 const store = createStore(
   reducer,
-  applyMiddleware(...middleware)
-)
+  composeWithDevTools(
+    applyMiddleware(...middleware),
+))
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 )

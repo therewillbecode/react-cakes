@@ -1,13 +1,14 @@
-import React from 'React'
+import React from 'react'
 
 import Recipe from './Recipe'
 
 
 const RecipesList = props => {
-    const { recipes }  = props
+    const { items }  = props
     return (
       <div>
-        {recipes.map(recipe => {
+          Recipes List
+        {items.map(recipe => {
             <Recipe recipe={recipe} />
         })}
       </div>

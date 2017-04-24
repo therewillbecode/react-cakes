@@ -6,9 +6,9 @@ import './Recipe.css'
 const Recipe = props => (
   <List.Item>
     <List.Header as='a'>{props.recipe.title}</List.Header>
-    <img className='image' src={props.recipe.image} />
     <List.Content>
-      {`Description: ${props.recipe.desc}`}
+     <img className='image' src={props.recipe.image} />
+      <div className='desc'>{props.recipe.desc}</div>
     </List.Content>
   </List.Item>
 )

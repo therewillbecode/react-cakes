@@ -10,7 +10,7 @@ const RecipeListContainer = props => {
    if (isFetching) {
      return (<div>Fetching Recipes</div>)
    } else {
-     return <RecipesList items={items} />
+     return <RecipesList {...props} />
    }
 }
 
@@ -24,7 +24,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return({
-        fetchRecipes: () => {dispatch(fetchRecipes())}
+        fetchRecipes: () => { dispatch(fetchRecipes()) }
     })
 }
 

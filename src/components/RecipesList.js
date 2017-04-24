@@ -5,7 +5,9 @@ import Recipe from './Recipe'
 
 class RecipesList extends Component {
   componentDidMount () {
-    this.props.fetchRecipes()
+      if((this.props.isFetching === false) && (this.props.items.length === 0)){
+         this.props.fetchRecipes()
+      }
   }
 
   render() {

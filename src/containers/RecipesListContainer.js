@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import RecipesList from '../components/RecipesList'
+
 const RecipeListContainer = props => {
    const { isFetching, recipes } = props
 

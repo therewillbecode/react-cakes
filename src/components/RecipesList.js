@@ -4,12 +4,11 @@ import Recipe from './Recipe'
 
 
 const RecipesList = props => {
-    const { items }  = props
     return (
       <div>
           Recipes List
         {items.map(recipe => {
-            <Recipe recipe={recipe} />
+            <Recipe {...props} />
         })}
       </div>
     )

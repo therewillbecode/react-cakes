@@ -1,4 +1,5 @@
 import React, { Component }from 'react'
+import { List } from 'semantic-ui-react'
 
 import Recipe from './Recipe'
 
@@ -6,6 +7,7 @@ import Recipe from './Recipe'
 class RecipesList extends Component {
   componentDidMount () {
       if((this.props.isFetching === false) && (this.props.items.length === 0)){
+          console.log(this.props)
          this.props.fetchRecipes()
       }
   }
@@ -13,12 +15,12 @@ class RecipesList extends Component {
   render() {
    const { items } = this.props
     return (
-      <div>
-        Recipes List
-        {items.map(recipe => {
+      <List>
+          <h2>Cakes</h2>
+        {items.map((recipe) => (
             <Recipe recipe={recipe} />
-        })}
-      </div>
+       ))}
+      </List>
     )
   }
 }

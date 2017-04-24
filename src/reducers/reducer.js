@@ -7,6 +7,7 @@ const reducer = (state, action) => state
 
 const initialState = {
   isFetching: false,
+  err: null,
   items: []
 }
 
@@ -15,19 +16,23 @@ const recipes = (state = initialState, action) => {
     case REQUEST_RECIPES:
       return {
         ...state,
+        err: null,
         isFetching: true,
+        items: []
       }
     case RECEIVE_RECIPES:
       return {
         ...state,
         isFetching: false,
-        items: action.posts,
+        err: null,
+        items: action.recipes,
       }
     case REQUEST_RECIPES_ERR:
       return {
         ...state,
         isFetching: false,
-        items: action.posts,
+        err: action.err,
+        items: []
       }
     default:
       return state

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { requestRecipes } from '../actions/index'
+import { fetchRecipes } from '../actions/index'
 import RecipesList from '../components/RecipesList'
 
 const RecipeListContainer = props => {
@@ -24,7 +24,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return({
-        requestRecipes: () => {dispatch(requestRecipes())}
+        fetchRecipes: () => {dispatch(fetchRecipes())}
     })
 }
 
